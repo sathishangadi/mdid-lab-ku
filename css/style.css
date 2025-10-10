@@ -1,0 +1,60 @@
+/* css/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f7f5;
+    color: #333;
+}
+
+header {
+    background-color: #2e7d32; /* Nature Green */
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    background-image: url('../images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+}
+
+nav {
+    background-color: #1b5e20;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: inline-block;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #4caf50;
+}
+
+.container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+footer {
+    background-color: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+h2 {
+    color: #2e7d32;
+}
