@@ -9,146 +9,180 @@
 
 <style>
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9fafb;
-    color: #001219;
-    margin: 0;
-    padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9fafb;
+  color: #001219;
+  margin: 0;
+  padding: 0;
 }
 
 /* Header */
 header {
-    text-align: center;
-    background-color: #005f73;
-    color: white;
-    padding: 25px 20px;
+  text-align: center;
+  background-color: #005f73;
+  color: white;
+  padding: 25px 20px;
 }
 
 /* Navigation */
 nav {
-    text-align: center;
-    background-color: #0a9396;
-    padding: 10px 0;
+  text-align: center;
+  background-color: #0a9396;
+  padding: 10px 0;
 }
-
 nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
 }
-
-nav a:hover {
-    text-decoration: underline;
-}
+nav a:hover { text-decoration: underline; }
 
 /* Container */
 .container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
 
 /* Tabs */
 .tab {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #0a9396;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #0a9396;
 }
-
 .tab button {
-    background-color: #e0f2f1;
-    border: none;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 500;
-    margin-right: 5px;
-    border-radius: 8px 8px 0 0;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: background 0.3s;
+  background-color: #e0f2f1;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 5px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.3s;
 }
-
-.tab button:hover {
-    background-color: #b2dfdb;
-}
-
+.tab button:hover { background-color: #b2dfdb; }
 .tab button.active {
-    background-color: #0a9396;
-    color: white;
+  background-color: #0a9396;
+  color: white;
 }
 
 /* Tab content */
 .tabcontent {
-    display: none;
-    animation: fadeEffect 0.5s;
+  display: none;
+  animation: fadeEffect 0.5s;
 }
-
 @keyframes fadeEffect {
-    from {opacity: 0; transform: translateY(10px);}
-    to {opacity: 1; transform: translateY(0);}
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 
-/* Member Card */
+/* Member Card (Faculty, SRF, etc.) */
 .member-card {
-    background: #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    border-radius: 20px;
-    padding: 25px;
-    margin: 20px auto;
-    text-align: center;
-    max-width: 700px;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 20px;
+  padding: 25px;
+  margin: 20px auto;
+  text-align: center;
+  max-width: 700px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-
 .member-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-
 .member-card img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 15px;
-    border: 3px solid #0a9396;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #0a9396;
 }
-
-.member-card h2 { margin-bottom: 5px; color: #005f73; }
-.member-card h4 { margin-top: 0; color: #0a9396; }
+.member-card h2 { color: #005f73; margin-bottom: 5px; }
+.member-card h4 { color: #0a9396; margin-top: 0; }
 .member-card p { color: #444; line-height: 1.6; }
-.member-card a { text-decoration: none; }
-.member-card a.btn { margin: 5px; }
 
-.btn {
-    background: #0a9396;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s, transform 0.3s;
+/* Scholar Grid Layout */
+.scholar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;
 }
 
-.btn:hover { background: #005f73; transform: scale(1.05); }
+/* Scholar Card */
+.scholar-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.scholar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+.scholar-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 10px;
+  border: 3px solid #0a9396;
+}
+.scholar-card h3 {
+  color: #005f73;
+  margin: 8px 0;
+}
+.scholar-card p a {
+  color: #0a9396;
+  text-decoration: none;
+  font-size: 14px;
+}
+.scholar-card p a:hover { text-decoration: underline; }
 
+/* ORCID Button */
+.orcid-btn {
+  background-color: #A6CE39;
+  color: #fff;
+  border-radius: 6px;
+  padding: 8px 15px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.orcid-btn:hover {
+  background-color: #8bbf2d;
+  transform: scale(1.05);
+}
+
+/* Footer */
 footer {
-    text-align: center;
-    background-color: #005f73;
-    color: white;
-    padding: 15px 0;
-    margin-top: 40px;
+  text-align: center;
+  background-color: #005f73;
+  color: white;
+  padding: 15px 0;
+  margin-top: 40px;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-    .member-card img { width: 120px; height: 120px; }
-    .tab { flex-direction: column; }
-    .tab button { margin-bottom: 5px; width: 100%; justify-content: center; }
+  .tab { flex-direction: column; }
+  .tab button { margin-bottom: 5px; width: 100%; justify-content: center; }
 }
 </style>
 </head>
@@ -156,160 +190,105 @@ footer {
 <body>
 
 <header>
-    <h1>Metabolic Disorders & Infectious Diseases Research Lab</h1>
-    <p>Department of Zoology, Kakatiya University, Telangana, India</p>
+  <h1>Metabolic Disorders & Infectious Diseases Research Lab</h1>
+  <p>Department of Zoology, Kakatiya University, Telangana, India</p>
 </header>
 
 <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="research.html">Research</a>
-    <a href="members.html">Members</a>
-    <a href="publications.html">Publications</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="research.html">Research</a>
+  <a href="members.html">Members</a>
+  <a href="publications.html">Publications</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
 
-    <!-- Tabs -->
-    <div class="tab">
-        <button class="tablinks active" onclick="openTab(event, 'faculty')"><i class="fas fa-chalkboard-teacher"></i>Faculty</button>
-        <button class="tablinks" onclick="openTab(event, 'postdocs')"><i class="fas fa-flask"></i>Postdocs</button>
-        <button class="tablinks" onclick="openTab(event, 'srfs')"><i class="fas fa-user-graduate"></i>SRF</button>
-        <button class="tablinks" onclick="openTab(event, 'phd')"><i class="fas fa-graduation-cap"></i>PhD Scholars</button>
-        <button class="tablinks" onclick="openTab(event, 'msc')"><i class="fas fa-book"></i>MSc Students</button>
-        <button class="tablinks" onclick="openTab(event, 'alumni')"><i class="fas fa-history"></i>Alumni</button>
+  <!-- Tabs -->
+  <div class="tab">
+    <button class="tablinks active" onclick="openTab(event, 'faculty')"><i class="fas fa-chalkboard-teacher"></i>Faculty</button>
+    <button class="tablinks" onclick="openTab(event, 'postdocs')"><i class="fas fa-flask"></i>Postdocs</button>
+    <button class="tablinks" onclick="openTab(event, 'srfs')"><i class="fas fa-user-graduate"></i>SRF</button>
+    <button class="tablinks" onclick="openTab(event, 'phd')"><i class="fas fa-graduation-cap"></i>PhD Scholars</button>
+    <button class="tablinks" onclick="openTab(event, 'msc')"><i class="fas fa-book"></i>MSc Students</button>
+    <button class="tablinks" onclick="openTab(event, 'alumni')"><i class="fas fa-history"></i>Alumni</button>
+  </div>
+
+  <!-- Faculty -->
+  <div id="faculty" class="tabcontent" style="display:block;">
+    <div class="member-card">
+      <img src="images/prof_estari.jpg" alt="Prof. Estari Mamidala">
+      <h2>Prof. Estari Mamidala, Ph.D</h2>
+      <h4>Lab Head, Department of Zoology</h4>
+      <p>Expert in Metabolic Disorders & Infectious Diseases</p>
+      <a href="docs/prof_estari_cv.pdf" class="orcid-btn">📄 Download CV</a>
     </div>
+  </div>
 
-    <!-- Faculty -->
-    <div id="faculty" class="tabcontent" style="display:block;">
-        <div class="member-card">
-            <img src="images/prof_estari.jpg" alt="Prof. Estari Mamidala">
-            <h2>Prof. Estari Mamidala, Ph.D</h2>
-            <h4>Lab Head, Department of Zoology</h4>
-            <p>Expert in Metabolic Disorders & Infectious Diseases</p>
-            <a href="docs/prof_estari_cv.pdf" class="btn">📄 Download CV</a>
-        </div>
+  <!-- PhD Scholars -->
+  <div id="phd" class="tabcontent">
+    <div class="scholar-grid">
+      <div class="scholar-card">
+        <img src="images/sathish_pic.png" alt="Sathish Angadi">
+        <h3>Sathish Angadi</h3>
+        <p><a href="mailto:angadisathish1995@kakatiya.ac.in">angadisathish1995@kakatiya.ac.in</a></p>
+        <a href="https://orcid.org/0009-0008-7771-8375" target="_blank" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+      <div class="scholar-card">
+        <img src="images/janaki_pic.png" alt="Janaki Ramulu">
+        <h3>Janaki Ramulu</h3>
+        <p><a href="mailto:janaki@example.com">janaki@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+      <div class="scholar-card">
+        <img src="images/md_sanober.png" alt="MD Sanober">
+        <h3>MD Sanober</h3>
+        <p><a href="mailto:mdsanober@example.com">mdsanober@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+      <div class="scholar-card">
+        <img src="images/kartheek_y.png" alt="Kartheek Y">
+        <h3>Kartheek Y</h3>
+        <p><a href="mailto:kartheek@example.com">kartheek@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+      <div class="scholar-card">
+        <img src="images/joshna_narsimha.png" alt="Joshna Narsimha">
+        <h3>Joshna Narsimha</h3>
+        <p><a href="mailto:joshna@example.com">joshna@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+      <div class="scholar-card">
+        <img src="images/rakesh_pic.png" alt="Dr. Davella Rakesh">
+        <h3>Dr. Davella Rakesh</h3>
+        <p><a href="mailto:rakesh@example.com">rakesh@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+      <div class="scholar-card">
+        <img src="images/shiva_krishna_pic.png" alt="Dr. Pujala Shiva Krishna">
+        <h3>Dr. Pujala Shiva Krishna</h3>
+        <p><a href="mailto:shivakrishna@example.com">shivakrishna@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
     </div>
-
-    <!-- Postdocs -->
-    <div id="postdocs" class="tabcontent">
-        <div class="member-card">
-            <img src="images/postdoc_sample.jpg" alt="Postdoc Name">
-            <h2>Dr. Jane Doe</h2>
-            <h4>Postdoctoral Fellow</h4>
-            <p>Research on Computational Drug Discovery</p>
-        </div>
-    </div>
-
-    <!-- SRF -->
-    <div id="srfs" class="tabcontent">
-        <div class="member-card">
-            <img src="images/srf_sample.jpg" alt="SRF Name">
-            <h2>Mr. John Smith</h2>
-            <h4>Senior Research Fellow</h4>
-            <p>Research in Molecular Docking & Phytochemicals</p>
-        </div>
-    </div>
-
-   <!-- PhD Scholars -->
-<div id="phd" class="tabcontent">
-  <div class="scholar-grid">
-
-    <!-- Sathish Angadi -->
-    <div class="scholar-card">
-      <img src="images/sathish_pic.png" alt="Sathish Angadi">
-      <h3>Sathish Angadi</h3>
-      <p><a href="mailto:angadisathish1995@kakatiya.ac.in">angadisathish1995@kakatiya.ac.in</a></p>
-      <a href="https://orcid.org/0009-0008-7771-8375" target="_blank" class="orcid-btn">🔗 ORCID</a>
-    </div>
-
-    <!-- Janaki Ramulu -->
-    <div class="scholar-card">
-      <img src="images/janaki_pic.png" alt="Janaki Ramulu">
-      <h3>Janaki Ramulu</h3>
-      <p><a href="mailto:janaki@example.com">janaki@example.com</a></p>
-      <a href="#" target="_blank" class="orcid-btn">🔗 ORCID</a>
-    </div>
-
-    <!-- MD Sanober -->
-    <div class="scholar-card">
-      <img src="images/md_sanober.png" alt="MD Sanober">
-      <h3>MD Sanober</h3>
-      <p><a href="mailto:mdsanober@example.com">mdsanober@example.com</a></p>
-      <a href="#" target="_blank" class="orcid-btn">🔗 ORCID</a>
-    </div>
-
-    <!-- Kartheek Y -->
-    <div class="scholar-card">
-      <img src="images/kartheek_y.png" alt="Kartheek Y">
-      <h3>Kartheek Y</h3>
-      <p><a href="mailto:kartheek@example.com">kartheek@example.com</a></p>
-      <a href="#" target="_blank" class="orcid-btn">🔗 ORCID</a>
-    </div>
-
-    <!-- Joshna -->
-    <div class="scholar-card">
-      <img src="images/joshna_narsimha.png" alt="Joshna Narsimha">
-      <h3>Joshna Narsimha</h3>
-      <p><a href="mailto:joshna@example.com">joshna@example.com</a></p>
-      <a href="#" target="_blank" class="orcid-btn">🔗 ORCID</a>
-    </div>
-
-    <!-- Dr. Davella Rakesh -->
-    <div class="scholar-card">
-      <img src="images/rakesh_pic.png" alt="Dr. Davella Rakesh">
-      <h3>Dr. Davella Rakesh</h3>
-      <p><a href="mailto:rakesh@example.com">rakesh@example.com</a></p>
-      <a href="#" target="_blank" class="orcid-btn">🔗 ORCID</a>
-    </div>
-
-    <!-- Dr. Pujala Shiva Krishna -->
-    <div class="scholar-card">
-      <img src="images/shiva_krishna_pic.png" alt="Dr. Pujala Shiva Krishna">
-      <h3>Dr. Pujala Shiva Krishna</h3>
-      <p><a href="mailto:shivakrishna@example.com">shivakrishna@example.com</a></p>
-      <a href="#" target="_blank" class="orcid-btn">🔗 ORCID</a>
-    </div>
-
   </div>
 </div>
 
-
-    <!-- MSc Students -->
-    <div id="msc" class="tabcontent">
-        <div class="member-card">
-            <img src="images/msc_sample.jpg" alt="MSc Student">
-            <h2>Ms. Anna Lee</h2>
-            <h4>MSc Student</h4>
-        </div>
-    </div>
-
-    <!-- Alumni -->
-    <div id="alumni" class="tabcontent">
-        <div class="member-card">
-            <img src="images/alumni_sample.jpg" alt="Alumni Name">
-            <h2>Mr. Alex Brown</h2>
-            <h4>PhD Alumni</h4>
-        </div>
-    </div>
-
-</div>
-
 <footer>
-    &copy; 2025 Metabolic Disorders & Infectious Diseases Research Lab, Kakatiya University
+  &copy; 2025 Metabolic Disorders & Infectious Diseases Research Lab, Kakatiya University
 </footer>
 
 <script>
 function openTab(evt, tabName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.classList.add("active");
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.classList.add("active");
 }
 </script>
 
