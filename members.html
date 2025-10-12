@@ -1,118 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Members - MDID Research Lab</title>
-    <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Members - MDID Research Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9fafb;
+    color: #001219;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: #005f73;
+    color: white;
+    padding: 25px 20px;
+}
+
+/* Navigation */
+nav {
+    text-align: center;
+    background-color: #0a9396;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Tabs */
+.tab {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #0a9396;
+}
+
+.tab button {
+    background-color: #e0f2f1;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    margin-right: 5px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.3s;
+}
+
+.tab button:hover {
+    background-color: #b2dfdb;
+}
+
+.tab button.active {
+    background-color: #0a9396;
+    color: white;
+}
+
+/* Tab content */
+.tabcontent {
+    display: none;
+    animation: fadeEffect 0.5s;
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Member Card */
+.member-card {
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 700px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.member-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #0a9396;
+}
+
+.member-card h2 { margin-bottom: 5px; color: #005f73; }
+.member-card h4 { margin-top: 0; color: #0a9396; }
+.member-card p { color: #444; line-height: 1.6; }
+.member-card a { text-decoration: none; }
+.member-card a.btn { margin: 5px; }
+
+.btn {
+    background: #0a9396;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover { background: #005f73; transform: scale(1.05); }
+
+footer {
+    text-align: center;
+    background-color: #005f73;
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .member-card img { width: 120px; height: 120px; }
+    .tab { flex-direction: column; }
+    .tab button { margin-bottom: 5px; width: 100%; justify-content: center; }
+}
+</style>
 </head>
 
 <body>
-    <!-- HEADER -->
-    <header>
-        <h1>Metabolic Disorders & Infectious Diseases Research Lab</h1>
-        <p>Department of Zoology, Kakatiya University, Telangana, India</p>
-    </header>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="research.html">Research</a>
-        <a href="members.html">Members</a>
-        <a href="publications.html">Publications</a>
-        <a href="gallery.html">Gallery</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<header>
+    <h1>Metabolic Disorders & Infectious Diseases Research Lab</h1>
+    <p>Department of Zoology, Kakatiya University, Telangana, India</p>
+</header>
 
-    <div class="container">
-        <!-- Faculty Section -->
-        <section id="faculty">
-            <h2>Faculty</h2>
-            <!-- Example Faculty Card -->
-            <div class="member-card">
-                <img src="images/prof_estari.jpg" alt="Prof. Estari Mamidala">
-                <h2>Prof. Estari Mamidala, Ph.D</h2>
-                <h4>Lab Head, Department of Zoology, Kakatiya University</h4>
-                <p>Expert in Metabolic Disorders & Infectious Diseases</p>
-                <div>
-                    <a href="docs/prof_estari_cv.pdf" target="_blank" class="btn">📄 Download CV</a>
-                </div>
-            </div>
-        </section>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="research.html">Research</a>
+    <a href="members.html">Members</a>
+    <a href="publications.html">Publications</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+</nav>
 
-        <!-- Postdoctoral Researchers -->
-        <section id="postdocs">
-            <h2>Postdoctoral Researchers (PDF)</h2>
-            <!-- Example PDF Card -->
-            <div class="member-card">
-                <img src="images/postdoc_sample.jpg" alt="Postdoc Name">
-                <h2>Dr. Jane Doe</h2>
-                <h4>Postdoctoral Fellow, MDID Lab</h4>
-                <p>Research on Computational Drug Discovery</p>
-            </div>
-        </section>
+<div class="container">
 
-        <!-- Senior Research Fellows -->
-        <section id="srfs">
-            <h2>Senior Research Fellows (SRF)</h2>
-            <!-- SRF profiles -->
-        </section>
-
-        <!-- PhD Scholars -->
-        <section id="phd">
-            <h2>PhD Scholars</h2>
-
-            <!-- Sathish Angadi Card -->
-            <div class="member-card">
-                <img src="images/sathish_pic.png" alt="Sathish Angadi">
-
-                <h2>Mr. Sathish Angadi</h2>
-                <h4>Research Scholar, Department of Zoology, Kakatiya University</h4>
-                <p>SET Qualified</p>
-
-                <h3 style="margin-top: 20px; color: #001219;">Title of Research Work</h3>
-                <p style="font-style: italic;">“In silico investigation of CCR5 inhibitors from phytochemicals against HIV”</p>
-
-                <p>
-                    <strong>Email:</strong> <a href="mailto:angadisathish1995@kakatiya.ac.in">angadisathish1995@kakatiya.ac.in</a><br>
-                    <strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-7771-8375" target="_blank">0009-0008-7771-8375</a>
-                </p>
-
-                <div style="margin: 20px 0;">
-                    <a href="docs/sathish_bio_data.pdf" target="_blank" class="btn">📄 Download CV</a>
-                    <a href="https://orcid.org/0009-0008-7771-8375" target="_blank" class="btn">🔗 ORCID Profile</a>
-                </div>
-
-                <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
-
-                <h4>Research Interests</h4>
-                <p>Computational Drug Discovery | Molecular Docking | CCR5 Receptor | Phytochemistry | AI in Biology</p>
-
-                <h4>Supervisor</h4>
-                <p>Dr. [Guide Name], Professor, Department of Zoology, Kakatiya University</p>
-            </div>
-        </section>
-
-        <!-- MSc Students -->
-        <section id="msc">
-            <h2>MSc Students</h2>
-            <!-- MSc profiles -->
-        </section>
-
-        <!-- Alumni -->
-        <section id="alumni">
-            <h2>Alumni</h2>
-            <!-- Alumni profiles -->
-        </section>
+    <!-- Tabs -->
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'faculty')"><i class="fas fa-chalkboard-teacher"></i>Faculty</button>
+        <button class="tablinks" onclick="openTab(event, 'postdocs')"><i class="fas fa-flask"></i>Postdocs</button>
+        <button class="tablinks" onclick="openTab(event, 'srfs')"><i class="fas fa-user-graduate"></i>SRF</button>
+        <button class="tablinks" onclick="openTab(event, 'phd')"><i class="fas fa-graduation-cap"></i>PhD Scholars</button>
+        <button class="tablinks" onclick="openTab(event, 'msc')"><i class="fas fa-book"></i>MSc Students</button>
+        <button class="tablinks" onclick="openTab(event, 'alumni')"><i class="fas fa-history"></i>Alumni</button>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-        &copy; 2025 Metabolic Disorders & Infectious Diseases Research Lab, Kakatiya University
-    </footer>
+    <!-- Faculty -->
+    <div id="faculty" class="tabcontent" style="display:block;">
+        <div class="member-card">
+            <img src="images/prof_estari.jpg" alt="Prof. Estari Mamidala">
+            <h2>Prof. Estari Mamidala, Ph.D</h2>
+            <h4>Lab Head, Department of Zoology</h4>
+            <p>Expert in Metabolic Disorders & Infectious Diseases</p>
+            <a href="docs/prof_estari_cv.pdf" class="btn">📄 Download CV</a>
+        </div>
+    </div>
+
+    <!-- Postdocs -->
+    <div id="postdocs" class="tabcontent">
+        <div class="member-card">
+            <img src="images/postdoc_sample.jpg" alt="Postdoc Name">
+            <h2>Dr. Jane Doe</h2>
+            <h4>Postdoctoral Fellow</h4>
+            <p>Research on Computational Drug Discovery</p>
+        </div>
+    </div>
+
+    <!-- SRF -->
+    <div id="srfs" class="tabcontent">
+        <div class="member-card">
+            <img src="images/srf_sample.jpg" alt="SRF Name">
+            <h2>Mr. John Smith</h2>
+            <h4>Senior Research Fellow</h4>
+            <p>Research in Molecular Docking & Phytochemicals</p>
+        </div>
+    </div>
+
+    <!-- PhD Scholars -->
+<div id="phd" class="tabcontent">
+    <div class="member-grid" style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
+
+        <!-- Sathish Angadi -->
+        <div class="member-card" style="max-width:150px; padding:12px; background:#e0f2f1;">
+            <img src="images/sathish_pic.png" alt="Sathish Angadi" style="width:100px;height:100px;">
+            <h4 style="margin:8px 0 4px 0; font-size:16px;">Sathish Angadi</h4>
+            <p style="margin:2px 0; font-size:14px;"><a href="mailto:angadisathish1995@kakatiya.ac.in">Email</a></p>
+            <p style="margin:2px 0; font-size:14px;"><a href="https://orcid.org/0009-0008-7771-8375" target="_blank" style="color:#0a9396;">ORCID</a></p>
+        </div>
+
+        <!-- Janaki Ramulu -->
+        <div class="member-card" style="max-width:150px; padding:12px; background:#e0f2f1;">
+            <img src="images/janaki_pic.png" alt="Janaki Ramulu" style="width:100px;height:100px;">
+            <h4 style="margin:8px 0 4px 0; font-size:16px;">Janaki Ramulu</h4>
+            <p style="margin:2px 0; font-size:14px;"><a href="mailto:janaki@example.com">Email</a></p>
+            <p style="margin:2px 0; font-size:14px;"><a href="#" target="_blank" style="color:#0a9396;">ORCID</a></p>
+        </div>
+
+        <!-- MD Sanober -->
+        <div class="member-card" style="max-width:150px; padding:12px; background:#e0f2f1;">
+            <img src="images/md_sanober.png" alt="MD Sanober" style="width:100px;height:100px;">
+            <h4 style="margin:8px 0 4px 0; font-size:16px;">MD Sanober</h4>
+            <p style="margin:2px 0; font-size:14px;"><a href="mailto:mdsanober@example.com">Email</a></p>
+            <p style="margin:2px 0; font-size:14px;"><a href="#" target="_blank" style="color:#0a9396;">ORCID</a></p>
+        </div>
+
+        <!-- Kartheek Y -->
+        <div class="member-card" style="max-width:150px; padding:12px; background:#e0f2f1;">
+            <img src="images/kartheek_y.png" alt="Kartheek Y" style="width:100px;height:100px;">
+            <h4 style="margin:8px 0 4px 0; font-size:16px;">Kartheek Y</h4>
+            <p style="margin:2px 0; font-size:14px;"><a href="mailto:kartheek@example.com">Email</a></p>
+            <p style="margin:2px 0; font-size:14px;"><a href="#" target="_blank" style="color:#0a9396;">ORCID</a></p>
+        </div>
+
+        <!-- Joshna Narsimha -->
+        <div class="member-card" style="max-width:150px; padding:12px; background:#e0f2f1;">
+            <img src="images/joshna_narsimha.png" alt="Joshna Narsimha" style="width:100px;height:100px;">
+            <h4 style="margin:8px 0 4px 0; font-size:16px;">Joshna Narsimha</h4>
+            <p style="margin:2px 0; font-size:14px;"><a href="mailto:joshna@example.com">Email</a></p>
+            <p style="margin:2px 0; font-size:14px;"><a href="#" target="_blank" style="color:#0a9396;">ORCID</a></p>
+        </div>
+
+    </div>
+</div>
+
+        </div>
+
+    </div>
+</div>
+
+        </div>
+    </div>
+
+    <!-- MSc Students -->
+    <div id="msc" class="tabcontent">
+        <div class="member-card">
+            <img src="images/msc_sample.jpg" alt="MSc Student">
+            <h2>Ms. Anna Lee</h2>
+            <h4>MSc Student</h4>
+        </div>
+    </div>
+
+    <!-- Alumni -->
+    <div id="alumni" class="tabcontent">
+        <div class="member-card">
+            <img src="images/alumni_sample.jpg" alt="Alumni Name">
+            <h2>Mr. Alex Brown</h2>
+            <h4>PhD Alumni</h4>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2025 Metabolic Disorders & Infectious Diseases Research Lab, Kakatiya University
+</footer>
+
+<script>
+function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) { tabcontent[i].style.display = "none"; }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) { tablinks[i].classList.remove("active"); }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
 </body>
 </html>
