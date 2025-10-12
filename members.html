@@ -5,7 +5,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Members - MDID Research Lab</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+            color: #001219;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            background-color: #005f73;
+            color: white;
+            padding: 20px 0;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #0a9396;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        section h2 {
+            border-bottom: 3px solid #0a9396;
+            display: inline-block;
+            padding-bottom: 5px;
+            color: #005f73;
+        }
+
+        .member-card {
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px auto;
+            text-align: center;
+            max-width: 700px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .member-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #0a9396;
+        }
+
+        .member-card h2 {
+            margin-bottom: 5px;
+            color: #005f73;
+        }
+
+        .member-card h4 {
+            margin-top: 0;
+            color: #0a9396;
+        }
+
+        .member-card p {
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .member-card a {
+            color: #0077b6;
+            text-decoration: none;
+        }
+
+        .member-card a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            background: #0a9396;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #005f73;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #005f73;
+            color: white;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            .member-card {
+                padding: 20px;
+            }
+            .member-card img {
+                width: 120px;
+                height: 120px;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>Metabolic Disorders & Infectious Diseases Research Lab</h1>
@@ -23,16 +160,16 @@
     </nav>
 
     <div class="container">
-        <!-- Faculty Section -->
+        <!-- Faculty -->
         <section id="faculty">
             <h2>Faculty</h2>
-            <!-- Faculty member cards will go here -->
+            <!-- Faculty profiles will go here -->
         </section>
 
         <!-- Postdoctoral Researchers -->
         <section id="postdocs">
-            <h2>Postdoctoral Researchers</h2>
-            <!-- PDF profiles will go here -->
+            <h2>Postdoctoral Researchers (PDF)</h2>
+            <!-- Postdoc profiles will go here -->
         </section>
 
         <!-- Senior Research Fellows -->
@@ -46,33 +183,33 @@
             <h2>PhD Scholars</h2>
 
             <!-- === Sathish Angadi (PhD Scholar) === -->
-            <div style="max-width: 700px; margin: 40px auto; background: #ffffff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 20px; padding: 30px; text-align: center; font-family: 'Poppins', sans-serif;">
-                <img src="images/sathish_pic.png" alt="Sathish Angadi" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 3px solid #0a9396;">
-                
-                <h2 style="margin-bottom: 5px; color: #005f73;">Mr. Sathish Angadi</h2>
-                <h4 style="margin-top: 0; color: #0a9396;">Research Scholar, Department of Zoology, Kakatiya University</h4>
-                <p style="color: #6c757d;">SET Qualified</p>
+            <div class="member-card">
+                <img src="images/sathish_pic.png" alt="Sathish Angadi">
+
+                <h2>Mr. Sathish Angadi</h2>
+                <h4>Research Scholar, Department of Zoology, Kakatiya University</h4>
+                <p>SET Qualified</p>
 
                 <h3 style="margin-top: 20px; color: #001219;">Title of Research Work</h3>
-                <p style="font-style: italic; color: #444;">“In silico investigation of CCR5 inhibitors from phytochemicals against HIV”</p>
+                <p style="font-style: italic;">“In silico investigation of CCR5 inhibitors from phytochemicals against HIV”</p>
 
-                <p style="margin-top: 15px;">
-                    <strong>Email:</strong> <a href="mailto:angadisathish1995@kakatiya.ac.in" style="color: #0077b6;">angadisathish1995@kakatiya.ac.in</a><br>
-                    <strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-7771-8375" target="_blank" style="color: #0077b6;">https://orcid.org/0009-0008-7771-8375</a>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:angadisathish1995@kakatiya.ac.in">angadisathish1995@kakatiya.ac.in</a><br>
+                    <strong>ORCID:</strong> <a href="https://orcid.org/0009-0008-7771-8375" target="_blank">0009-0008-7771-8375</a>
                 </p>
 
                 <div style="margin: 20px 0;">
-                    <a href="docs/sathish_bio_data.pdf" target="_blank" style="background: #0a9396; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; margin-right: 10px;">📄 Download CV</a>
-                    <a href="https://orcid.org/0009-0008-7771-8375" target="_blank" style="background: #005f73; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none;">🔗 ORCID Profile</a>
+                    <a href="docs/sathish_bio_data.pdf" target="_blank" class="btn">📄 Download CV</a>
+                    <a href="https://orcid.org/0009-0008-7771-8375" target="_blank" class="btn">🔗 ORCID Profile</a>
                 </div>
 
                 <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
 
-                <h4 style="color: #001219;">Research Interests</h4>
-                <p style="color: #444;">Computational Drug Discovery | Molecular Docking | CCR5 Receptor | Phytochemistry | AI in Biology</p>
+                <h4>Research Interests</h4>
+                <p>Computational Drug Discovery | Molecular Docking | CCR5 Receptor | Phytochemistry | AI in Biology</p>
 
-                <h4 style="color: #001219;">Supervisor</h4>
-                <p style="color: #444;">Dr. [Guide Name], Professor, Department of Zoology, Kakatiya University</p>
+                <h4>Supervisor</h4>
+                <p>Dr. [Guide Name], Professor, Department of Zoology, Kakatiya University</p>
             </div>
         </section>
 
