@@ -51,7 +51,7 @@ nav a:hover { text-decoration: underline; }
   flex-wrap: wrap;
   margin-bottom: 30px;
   border-bottom: 2px solid #0a9396;
-  justify-content: center; /* center tabs horizontally */
+  justify-content: center;
 }
 .tab button {
   background-color: #e0f2f1;
@@ -60,7 +60,7 @@ nav a:hover { text-decoration: underline; }
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  margin: 0 5px 5px 5px;
+  margin: 0 5px;
   border-radius: 8px 8px 0 0;
   display: flex;
   align-items: center;
@@ -77,66 +77,48 @@ nav a:hover { text-decoration: underline; }
 .tabcontent {
   display: none;
   animation: fadeEffect 0.5s;
+  margin-top: 20px;
 }
 @keyframes fadeEffect {
   from {opacity: 0; transform: translateY(10px);}
   to {opacity: 1; transform: translateY(0);}
 }
 
-/* Member Card (Faculty, SRF, etc.) */
-.member-card {
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  color: #005f73;
+  margin: 40px 0 20px 0;
+  font-weight: 600;
+}
+
+/* Horizontal line between sections */
+hr {
+  border: 1px solid #0a9396;
+  margin: 30px 0;
+}
+
+/* Member & Scholar Cards (uniform size) */
+.member-card, .scholar-card {
   background: #ffffff;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   border-radius: 20px;
-  padding: 25px;
-  margin: 20px auto; /* center single card */
-  text-align: center;
-  max-width: 700px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.member-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-.member-card img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #0a9396;
-}
-.member-card h2 { color: #005f73; margin-bottom: 5px; }
-.member-card h4 { color: #0a9396; margin-top: 0; }
-.member-card p { color: #444; line-height: 1.6; }
-
-/* Scholar Grid Layout */
-.scholar-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  justify-content: center; /* center the whole grid */
-  margin: 0 auto;
-}
-
-/* Scholar Card */
-.scholar-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   padding: 20px;
+  margin: 0 auto;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
-.scholar-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+.member-card:hover, .scholar-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-.scholar-card img {
+.member-card img, .scholar-card img {
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -144,28 +126,30 @@ nav a:hover { text-decoration: underline; }
   margin: 0 auto 10px;
   border: 3px solid #0a9396;
 }
-.scholar-card h3 {
-  color: #005f73;
-  margin: 8px 0;
+.member-card h2, .scholar-card h3 { color: #005f73; margin: 5px 0; }
+.member-card h4 { color: #0a9396; margin: 0; }
+.member-card p, .scholar-card p { color: #444; font-size: 14px; line-height: 1.4; }
+
+/* Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;
 }
-.scholar-card p a {
-  color: #0a9396;
-  text-decoration: none;
-  font-size: 14px;
-}
-.scholar-card p a:hover { text-decoration: underline; }
 
 /* ORCID Button */
 .orcid-btn {
   background-color: #A6CE39;
   color: #fff;
   border-radius: 6px;
-  padding: 8px 15px;
+  padding: 6px 12px;
   text-decoration: none;
   display: inline-block;
   margin-top: 8px;
   font-weight: 500;
   transition: background 0.3s ease, transform 0.2s ease;
+  font-size: 13px;
 }
 .orcid-btn:hover {
   background-color: #8bbf2d;
@@ -185,17 +169,20 @@ footer {
 @media (max-width: 600px) {
   .tab { flex-direction: column; }
   .tab button { margin-bottom: 5px; width: 100%; justify-content: center; }
+  .member-card, .scholar-card { width: 100%; height: auto; }
 }
 </style>
 </head>
 
 <body>
 
+<!-- Header -->
 <header>
   <h1>Metabolic Disorders & Infectious Diseases Research Lab</h1>
   <p>Department of Zoology, Kakatiya University, Telangana, India</p>
 </header>
 
+<!-- Navigation -->
 <nav>
   <a href="index.html">Home</a>
   <a href="about.html">About</a>
@@ -210,34 +197,74 @@ footer {
 
   <!-- Tabs -->
   <div class="tab">
-    <button class="tablinks active" onclick="openTab(event, 'faculty')"><i class="fas fa-chalkboard-teacher"></i>Faculty</button>
-    <button class="tablinks" onclick="openTab(event, 'postdocs')"><i class="fas fa-flask"></i>Postdocs</button>
-    <button class="tablinks" onclick="openTab(event, 'srfs')"><i class="fas fa-user-graduate"></i>SRF</button>
-    <button class="tablinks" onclick="openTab(event, 'phd')"><i class="fas fa-graduation-cap"></i>PhD Scholars</button>
-    <button class="tablinks" onclick="openTab(event, 'msc')"><i class="fas fa-book"></i>MSc Students</button>
-    <button class="tablinks" onclick="openTab(event, 'alumni')"><i class="fas fa-history"></i>Alumni</button>
+    <button class="tablinks active" onclick="openTab(event, 'faculty')"><i class="fas fa-chalkboard-teacher"></i> Faculty</button>
+    <button class="tablinks" onclick="openTab(event, 'postdocs')"><i class="fas fa-flask"></i> Postdocs</button>
+    <button class="tablinks" onclick="openTab(event, 'srfs')"><i class="fas fa-user-graduate"></i> SRF</button>
+    <button class="tablinks" onclick="openTab(event, 'phd')"><i class="fas fa-graduation-cap"></i> PhD Scholars</button>
+    <button class="tablinks" onclick="openTab(event, 'msc')"><i class="fas fa-book"></i> MSc Students</button>
+    <button class="tablinks" onclick="openTab(event, 'alumni')"><i class="fas fa-history"></i> Alumni</button>
   </div>
 
-  <!-- Faculty -->
+  <!-- Faculty Section -->
   <div id="faculty" class="tabcontent" style="display:block;">
-    <div class="member-card">
-      <img src="images/prof_estari.jpg" alt="Prof. Estari Mamidala">
-      <h2>Prof. Estari Mamidala, Ph.D</h2>
-      <h4>Lab Head, Department of Zoology</h4>
-      <p>Expert in Metabolic Disorders & Infectious Diseases</p>
-      <a href="docs/prof_estari_cv.pdf" class="orcid-btn">📄 Download CV</a>
+    <h2 class="section-title">Faculty</h2>
+    <hr>
+    <div class="grid">
+      <div class="member-card">
+        <img src="images/prof_estari.jpg" alt="Prof. Estari Mamidala">
+        <h2>Prof. Estari Mamidala, Ph.D</h2>
+        <h4>Lab Head</h4>
+        <p>Expert in Metabolic Disorders & Infectious Diseases</p>
+        <a href="docs/prof_estari_cv.pdf" class="orcid-btn">📄 Download CV</a>
+      </div>
     </div>
   </div>
 
-  <!-- PhD Scholars -->
+  <!-- Postdocs Section -->
+  <div id="postdocs" class="tabcontent">
+    <h2 class="section-title">Postdoctoral Fellows</h2>
+    <hr>
+    <div class="grid">
+      <div class="scholar-card">
+        <img src="images/venkanna.png" alt="Dr. Venkanna">
+        <h3>Dr. Venkanna</h3>
+        <p><a href="mailto:venkanna@example.com">venkanna@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- SRFs Section -->
+  <div id="srfs" class="tabcontent">
+    <h2 class="section-title">Senior Research Fellows (SRF)</h2>
+    <hr>
+    <div class="grid">
+      <div class="scholar-card">
+        <img src="images/swapna_kandagatla.png" alt="Dr. Swapna Kandagatla">
+        <h3>Dr. Swapna Kandagatla</h3>
+        <p><a href="mailto:swapna@example.com">swapna@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+      <div class="scholar-card">
+        <img src="images/rakesh_dawella.png" alt="Dr. Rakesh Dawella">
+        <h3>Dr. Rakesh Dawella</h3>
+        <p><a href="mailto:rakesh@example.com">rakesh@example.com</a></p>
+        <a href="#" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- PhD Scholars Section -->
   <div id="phd" class="tabcontent">
-    <div class="scholar-grid">
-      <!-- Scholar Card Example -->
+    <h2 class="section-title">PhD Scholars</h2>
+    <hr>
+    <div class="grid">
+      <!-- Repeat scholar-card for each PhD -->
       <div class="scholar-card">
         <img src="images/sathish_pic.png" alt="Sathish Angadi">
         <h3>Sathish Angadi</h3>
         <p><a href="mailto:angadisathish1995@kakatiya.ac.in">angadisathish1995@kakatiya.ac.in</a></p>
-        <a href="https://orcid.org/0009-0008-7771-8375" target="_blank" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
+        <a href="https://orcid.org/0009-0008-7771-8375" class="orcid-btn"><i class="fab fa-orcid"></i> ORCID</a>
       </div>
       <div class="scholar-card">
         <img src="images/janaki_pic.png" alt="Janaki Ramulu">
@@ -278,12 +305,55 @@ footer {
     </div>
   </div>
 
+  <!-- MSc Students Section -->
+  <div id="msc" class="tabcontent">
+    <h2 class="section-title">MSc Students</h2>
+    <hr>
+    <div class="grid">
+      <!-- 5 placeholder MSc student cards -->
+      <div class="scholar-card">
+        <img src="images/msc1.png" alt="MSc Student 1">
+        <h3>MSc Student 1</h3>
+        <p><a href="mailto:msc1@example.com">msc1@example.com</a></p>
+      </div>
+      <div class="scholar-card">
+        <img src="images/msc2.png" alt="MSc Student 2">
+        <h3>MSc Student 2</h3>
+        <p><a href="mailto:msc2@example.com">msc2@example.com</a></p>
+      </div>
+      <div class="scholar-card">
+        <img src="images/msc3.png" alt="MSc Student 3">
+        <h3>MSc Student 3</h3>
+        <p><a href="mailto:msc3@example.com">msc3@example.com</a></p>
+      </div>
+      <div class="scholar-card">
+        <img src="images/msc4.png" alt="MSc Student 4">
+        <h3>MSc Student 4</h3>
+        <p><a href="mailto:msc4@example.com">msc4@example.com</a></p>
+      </div>
+      <div class="scholar-card">
+        <img src="images/msc5.png" alt="MSc Student 5">
+        <h3>MSc Student 5</h3>
+        <p><a href="mailto:msc5@example.com">msc5@example.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Alumni Section -->
+  <div id="alumni" class="tabcontent">
+    <h2 class="section-title">Alumni</h2>
+    <hr>
+    <p style="text-align:center;">Alumni members will be added here.</p>
+  </div>
+
 </div>
 
+<!-- Footer -->
 <footer>
   &copy; 2025 Metabolic Disorders & Infectious Diseases Research Lab, Kakatiya University
 </footer>
 
+<!-- Tabs Script -->
 <script>
 function openTab(evt, tabName) {
   var i, tabcontent, tablinks;
