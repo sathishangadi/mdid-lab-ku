@@ -212,18 +212,33 @@ footer {
     font-size: 14px;
 }
 
+/* ===== ORCID Button Design ===== */
 .orcid-btn {
-    display: inline-block;
-    margin-top: 8px;
-    padding: 6px 12px;
-    background-color: #4caf50;
-    color: white !important;
-    border-radius: 20px;
-    font-weight: bold;
-    transition: background 0.3s ease;
+  display: inline-block;
+  margin-top: 8px;
+  padding: 6px 14px;
+  background-color: #4caf50;           /* parrot green */
+  color: white !important;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0px rgba(76, 175, 80, 0);  /* no glow by default */
 }
 
 .orcid-btn:hover {
-    background-color: #2e7d32;
+  background-color: #2e7d32;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(76, 175, 80, 0.7);  /* glowing ring */
 }
 
+/* Optional: smooth glowing pulse animation */
+@keyframes orcidGlow {
+  0% { box-shadow: 0 0 0 rgba(76,175,80,0); }
+  50% { box-shadow: 0 0 10px rgba(76,175,80,0.6); }
+  100% { box-shadow: 0 0 0 rgba(76,175,80,0); }
+}
+
+.orcid-btn {
+  animation: orcidGlow 2s infinite;
+}
