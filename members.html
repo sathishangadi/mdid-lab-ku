@@ -8,147 +8,16 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f9fafb;
-            color: #001219;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            text-align: center;
-            background-color: #005f73;
-            color: white;
-            padding: 20px 0;
-        }
-
-        nav {
-            text-align: center;
-            background-color: #0a9396;
-            padding: 10px 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        section {
-            margin-bottom: 60px;
-        }
-
-        section h2 {
-            border-bottom: 3px solid #0a9396;
-            display: inline-block;
-            padding-bottom: 5px;
-            color: #005f73;
-        }
-
-        .member-card {
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 20px;
-            padding: 30px;
-            margin: 30px auto;
-            text-align: center;
-            max-width: 700px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-
-        .member-card img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #0a9396;
-        }
-
-        .member-card h2 {
-            margin-bottom: 5px;
-            color: #005f73;
-        }
-
-        .member-card h4 {
-            margin-top: 0;
-            color: #0a9396;
-        }
-
-        .member-card p {
-            color: #444;
-            line-height: 1.6;
-        }
-
-        .member-card a {
-            color: #0077b6;
-            text-decoration: none;
-        }
-
-        .member-card a:hover {
-            text-decoration: underline;
-        }
-
-        .btn {
-            background: #0a9396;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #005f73;
-        }
-
-        footer {
-            text-align: center;
-            background-color: #005f73;
-            color: white;
-            padding: 15px 0;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 600px) {
-            .member-card {
-                padding: 20px;
-            }
-            .member-card img {
-                width: 120px;
-                height: 120px;
-            }
-        }
-    </style>
 </head>
 
 <body>
+    <!-- HEADER -->
     <header>
         <h1>Metabolic Disorders & Infectious Diseases Research Lab</h1>
         <p>Department of Zoology, Kakatiya University, Telangana, India</p>
     </header>
 
+    <!-- NAVIGATION -->
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -160,29 +29,44 @@
     </nav>
 
     <div class="container">
-        <!-- Faculty -->
+        <!-- Faculty Section -->
         <section id="faculty">
             <h2>Faculty</h2>
-            <!-- Faculty profiles will go here -->
+            <!-- Example Faculty Card -->
+            <div class="member-card">
+                <img src="images/prof_estari.jpg" alt="Prof. Estari Mamidala">
+                <h2>Prof. Estari Mamidala, Ph.D</h2>
+                <h4>Lab Head, Department of Zoology, Kakatiya University</h4>
+                <p>Expert in Metabolic Disorders & Infectious Diseases</p>
+                <div>
+                    <a href="docs/prof_estari_cv.pdf" target="_blank" class="btn">📄 Download CV</a>
+                </div>
+            </div>
         </section>
 
         <!-- Postdoctoral Researchers -->
         <section id="postdocs">
             <h2>Postdoctoral Researchers (PDF)</h2>
-            <!-- Postdoc profiles will go here -->
+            <!-- Example PDF Card -->
+            <div class="member-card">
+                <img src="images/postdoc_sample.jpg" alt="Postdoc Name">
+                <h2>Dr. Jane Doe</h2>
+                <h4>Postdoctoral Fellow, MDID Lab</h4>
+                <p>Research on Computational Drug Discovery</p>
+            </div>
         </section>
 
         <!-- Senior Research Fellows -->
         <section id="srfs">
             <h2>Senior Research Fellows (SRF)</h2>
-            <!-- SRF profiles will go here -->
+            <!-- SRF profiles -->
         </section>
 
         <!-- PhD Scholars -->
         <section id="phd">
             <h2>PhD Scholars</h2>
 
-            <!-- === Sathish Angadi (PhD Scholar) === -->
+            <!-- Sathish Angadi Card -->
             <div class="member-card">
                 <img src="images/sathish_pic.png" alt="Sathish Angadi">
 
@@ -216,16 +100,17 @@
         <!-- MSc Students -->
         <section id="msc">
             <h2>MSc Students</h2>
-            <!-- MSc profiles will go here -->
+            <!-- MSc profiles -->
         </section>
 
         <!-- Alumni -->
         <section id="alumni">
             <h2>Alumni</h2>
-            <!-- Alumni profiles will go here -->
+            <!-- Alumni profiles -->
         </section>
     </div>
 
+    <!-- FOOTER -->
     <footer>
         &copy; 2025 Metabolic Disorders & Infectious Diseases Research Lab, Kakatiya University
     </footer>
