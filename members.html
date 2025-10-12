@@ -51,6 +51,7 @@ nav a:hover { text-decoration: underline; }
   flex-wrap: wrap;
   margin-bottom: 30px;
   border-bottom: 2px solid #0a9396;
+  justify-content: center; /* center tabs horizontally */
 }
 .tab button {
   background-color: #e0f2f1;
@@ -59,7 +60,7 @@ nav a:hover { text-decoration: underline; }
   cursor: pointer;
   font-size: 16px;
   font-weight: 500;
-  margin-right: 5px;
+  margin: 0 5px 5px 5px;
   border-radius: 8px 8px 0 0;
   display: flex;
   align-items: center;
@@ -88,7 +89,7 @@ nav a:hover { text-decoration: underline; }
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   border-radius: 20px;
   padding: 25px;
-  margin: 20px auto;
+  margin: 20px auto; /* center single card */
   text-align: center;
   max-width: 700px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
@@ -114,7 +115,8 @@ nav a:hover { text-decoration: underline; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
-  justify-content: center;
+  justify-content: center; /* center the whole grid */
+  margin: 0 auto;
 }
 
 /* Scholar Card */
@@ -230,6 +232,7 @@ footer {
   <!-- PhD Scholars -->
   <div id="phd" class="tabcontent">
     <div class="scholar-grid">
+      <!-- Scholar Card Example -->
       <div class="scholar-card">
         <img src="images/sathish_pic.png" alt="Sathish Angadi">
         <h3>Sathish Angadi</h3>
@@ -274,6 +277,7 @@ footer {
       </div>
     </div>
   </div>
+
 </div>
 
 <footer>
